@@ -1,0 +1,605 @@
+@import url('https://fonts.googleapis.com/css2?family=Open+Sans:ital,wght@0,300..800;1,300..800&family=Roboto:ital,wght@0,100..900;1,100..900&display=swap');
+
+* {
+    margin: 0;
+padding: 0;
+box-sizing: border-box;
+
+}
+
+:root {
+   --primary:#4f5a68;
+   
+}
+
+body {
+    position: relative;
+    background: #ffffff;
+    font-family: roboto,arial;
+    width: 100%;
+    min-height: 100vh;
+    overflow: hidden;
+}
+
+header{
+    position: absolute;
+    top: 100px;
+    left: 10px;
+    right: 100px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 20px 50px;
+    z-index: 20 !important;
+    background: transparent;
+    
+}
+header::before{
+    position: absolute;
+    content: '';
+   
+padding: 30px;
+left: 29px;
+    background: var(--primary);
+
+
+    border-radius: 90px;
+}
+
+
+
+header::after{
+    position: absolute;
+    content: '';
+    top: 0;
+    right: 0;
+    width: 280px;
+    height: 64px;
+    background: var(--primary);
+
+
+
+  border-radius: 80px;
+}
+header .menu{
+    position: absolute;
+    text-decoration: none;
+    color: #ffffff;
+    font-size: 1.2em;
+    display: flex;
+    align-items: center;
+    transition: 0.5s;
+    
+   
+}
+
+header .menu.active{
+    transform: rotateZ(-225deg);
+   
+    
+}
+header.logo{
+    position: relative;
+    text-decoration: none;
+    color: #ffffff;
+    margin-left: 40px;
+    font-size: 1.2em;
+    text-transform:uppercase;
+}
+
+
+
+.search{
+    position: relative;
+    width: 220px;
+    z-index: 100;
+}
+.search input{
+    border: none;
+    outline: none;
+    width: 100%;
+    padding: 5px 15px;
+    background: transparent;
+    backdrop-filter: blur(5px);
+    color: #ffffff;
+}
+
+.search input::placeholder{
+    text-transform: uppercase;
+    color: #ffffff;
+}
+
+.search ion-icon{
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    color: #ffffff;
+    font-size: 1.2em;
+    right: 8px;
+}
+.banner{
+    position: relative;
+    width: 100%;
+    height: 100vh;
+    padding: 0 100px;
+    display: flex;
+    justify-content: center;
+    background: linear-gradient(-45deg ,#070e0e,#2c2d2d);
+    align-items: end;
+    overflow: hidden;
+    transition: 0.5s;
+   
+}
+.banner::after{
+    position: absolute;
+    content: '';
+    top : 90px;
+border-radius: 20px;
+ left: 100px;
+right: 100px;
+bottom: 30px;
+background: transparent;
+box-shadow: 0 0 50px rgba(0, 0, 0, 0.3);
+backdrop-filter: blur(20px);
+transition: 0.5s;
+}
+.nav{
+    position: absolute;
+    left: 100px;
+    top: 165px;
+    bottom: 100px;
+    background: transparent;
+    box-shadow: 0 0 25px rgba(0,0,0,0.2);
+    backdrop-filter: blur(10px);
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 20px;
+    transition: 0.5s;
+
+
+visibility: hidden;
+opacity: 0;
+
+    margin-top: 20px;
+    border-radius: 50px;
+
+
+    width: 0;
+    z-index: 1000;
+}
+.nav.active{
+    width: 200px;
+    visibility: visible;
+    opacity: 1;
+}
+
+.nav li{list-style: none;
+
+}
+
+.nav li a{
+    font-weight: bold;
+text-decoration: none;
+color: #c6baba;
+text-transform: uppercase;
+transition: 0.3s;
+}
+.nav li a:hover{
+    color: var(--primary)
+}
+.swiper{
+    width: 100%;
+    height: 100vh;
+    transition: 0.5s;
+}
+.swiper.model-img{
+    position: absolute;
+    z-index:10 ;
+    max-width: 70%;
+    opacity: 0.85;
+    visibility: visible;
+    bottom: 100px;
+    left: 120px;
+    transition: ease-in-out 0.5s;
+    transform-origin: bottom;
+}
+.swiper.active{
+    opacity: 0;
+    visibility: hidden;
+}
+.swiper .control{
+ 
+    position: absolute;
+   right: 2%;
+    top: 50%;
+    transform: translateY(-50%);
+    height: 200px;
+    width: 50px;
+    z-index: 100;
+}
+.swiper .swiper-button-prev{
+    position: absolute;
+   
+    right: 50%;
+    top: 15%;
+  
+    transform: rotateZ();
+    width: 25px;
+    height: 25px;
+}
+.swiper .swiper-button-next{
+    position: absolute;
+    right: 30%;
+    top: 65%;
+    transform: rotateZ();
+    width: 25px;
+    height: 25px;
+}
+.swiper .swiper-pagination{
+    position: absolute;
+    right: 50%;
+    top: 50%;
+    transform: translate(50%,-50%);
+    z-index: 10;
+}
+.banner .contant{
+    
+   position: absolute;
+    z-index: 100;
+    max-width: 400px;
+    left: 50%;
+  
+
+
+
+
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: flex-end;
+  margin-top: 30px;
+  font-size: 13px;
+  gap: 5px;
+    top: 50%;
+    transform: translateY(-50%) scale(1);
+    color: #ffffff;
+    transition: 0.5s;
+
+  
+}
+.banner .contant-active{
+    transform: translateY(-50%) scale(0);
+}
+.banner .contant h1{
+    
+    font-size: 4em;
+    color: var(--primary);
+    text-transform: uppercase;
+    font-weight: 550;
+}
+
+.banner .contant p{
+    
+    text-align: end;
+    color: var(--primary);
+    font-size: 0.8em;
+    font-weight: 300;
+}
+.banner .contant a{
+   
+    text-decoration: none;
+    text-transform: uppercase;
+    font-weight: 300;
+font-size: 1.1em;
+color: #ffffff;
+background: var(--primary);
+padding: 10px 20px;
+border-radius: 30px;
+border: 1px solid var(--primary);
+transition: 0.3s;
+
+
+}
+.banner .contant a:hover{
+    color: var(--primary);
+    background: transparent;
+}
+
+.contant.active {
+    opacity: 0;           
+    pointer-events: none;  
+    transition: 0.5s;      
+}
+
+.banner .title-left{
+   font-family: cursive;
+  text-transform: uppercase;
+  line-height: 1em;
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%) rotateZ(90deg);
+  left: -20px;
+  font-size: 3em;
+  letter-spacing: 9px;
+  color: var(--primary);
+  opacity: 0.1;
+  z-index: 1;
+}
+.bg-vedio{
+position: absolute;
+top: 0;
+left: 0;
+width: 100%;
+height: 100%;
+object-fit: cover;
+z-index: 0;
+transition: 0.5s;
+opacity: 0;
+visibility: hidden;
+}
+.bg-vedio.active{
+    opacity: 1;
+    visibility: visible;
+}
+.banner .vedio{
+    margin-bottom: -70px;
+   color: var(--primary);
+    position: absolute;
+    bottom: 110px;
+    right: 100px;
+    width: 60%;
+    height: 70px;
+    padding: 0;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background: transparent;
+    box-shadow: 0 0 25px rgba(0, 0, 0,0.4);
+    backdrop-filter: blur(5px);
+    z-index: 1;
+    
+}
+.banner .vedio video{
+    position: relative;
+    max-height: 70px;
+   
+    
+}
+.banner .vedio .services{
+    position: relative;
+    padding: 10px 16px;
+    height: 100%;
+    display: flex;
+    font-size: 10px;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    cursor: pointer;
+}
+.banner .vedio .services:hover::before{
+    position: absolute;
+    content: '';
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+background: rgba(26, 36, 72, 0.1);
+}
+.banner .vedio h3{
+    color: var(--primary);
+    text-transform: uppercase;
+    font-weight: 400;
+    font-size: 0.9em;
+    margin-bottom: 10px;
+    text-align: center;
+}
+
+.banner .vedio p{
+    font-size: 11px;
+    font-weight: 300;
+    text-align: center;
+}
+.banner .vedio .play{
+    padding: 20px;
+    height: 100%;
+    background: var(--primary);
+    display: flex;
+    align-self: center;
+   
+}
+.banner .vedio .play ion-icon{
+    font-size: 28px;
+    color: #ffffff;
+}
+.banner .vedio .play .close{
+    display: none;
+}
+
+.banner .vedio .play.active .close{
+    display: block;
+
+}
+.banner .vedio .play.active .open{
+    display: none;
+}
+.swiper .swiper-pagination ,.swiper-pagination-bullet{
+    background-color: transparent;
+}
+
+.banner form{
+    position: absolute;
+    top: 50%;
+  transform: translateY(-50%) scale(0);
+    width: 300px;
+    height: 340px;
+    background: rgba(26, 36, 72, 0.1);
+    box-shadow: 0 0 25px rgba(0, 0, 0,0.4);
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    padding: 40px;
+    transition: 0.5s;
+    z-index: 1;
+    border-radius: 20px;
+
+    
+
+}
+.banner form.active{
+    transform: translateY(-50%) scale(1);
+}
+form h2{
+    font-size: 18px;
+    font-weight: 400;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    text-align: center;
+    width: 100%;
+    margin-bottom: 20px;
+    color: #ffffff;
+}
+form input{
+    width: 100%;
+    outline: none;
+    margin-bottom: 20px;
+    border: 1px solid rgba(255,255,255,0.2);
+    background: transparent;
+    padding: 8px 10px;
+    color: #ffffff;
+    font-size: 0.9em;
+    font-weight:300 ;
+    box-shadow: inset 0 0 25px rgba(0,0,0,0.2);
+    border-radius: 20px;
+
+}
+form input::placeholder{
+    color: #ffffff;
+
+}
+.opop{
+    max-width: 150px;
+    border: 1px solid rgba(255,255,255,0.2);
+    box-shadow: 0 0 15px rgba(0, 0, 0, 0.3);
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    cursor: pointer;
+    transition: 0.3s;
+
+}
+.opop:hover{
+    box-shadow: inset 0 0 15px rgba(0, 0, 0, 0.3);
+}
+.sci{
+    position: absolute;
+    left: 130px;
+    bottom: 40px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    transform: scale(1);
+    transition: 0.5s;
+    z-index: 1000;
+    gap: 20px;
+    
+color: transparent;
+}
+
+
+.sci.active{
+    transform:scale(0)
+}
+
+@media(max-width:600px){
+    header{
+        padding: 10px;
+        top:20px;
+    left: 20px;
+right: 20px;
+    }
+    header::before{padding: 0px;
+       background: none;
+        width:130px;
+    height: 45px;
+    }
+    header::after{
+
+        width: 220px;
+        height: 45px;
+
+    }
+    .search{
+        width: 200px;
+
+    }
+    .nav{left:20px;
+    top: 65px;
+    bottom: 20px;
+
+}
+.nav.active{
+    width: 0 20px;
+
+}
+.banner{padding: 0 20px;
+
+
+}
+.banner::after{
+    top:20px;
+    left: 20px;
+    right: 20px;
+    bottom: 20px;
+    box-shadow: 0 0 25px rgba(0,0,0,0.2);
+
+}
+.swiper .model-img{
+    position: absolute;
+    z-index: 10;
+    max-width: 90%;
+    padding-top: 100px;
+    left: 0;
+top: -20px;
+transition: ease-in-out 0.5s;}
+
+.banner .title-left{
+    left: -65px;
+    font-size:2em;
+}
+.banner .contant{
+    left: 50%;
+    top: 60%;
+    transform: translate(-50% ,-50%) scale(1);
+    align-items: center;
+    gap: 20px;
+}.banner .contant h1{
+    font-size: 2.9em;
+    font-weight: 500;
+}
+.banner .contant p{
+    text-align: center;
+    font-size: 0.9em;
+}
+.banner .vedio{
+    bottom: 160px;
+    left: 90px;
+    width: 100px;
+}
+.banner .vedio .services{display: none;
+
+}
+.sci{
+    position: absolute;
+    left: 35px;
+    top: 50%;
+    transform: translateY(-50%);
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 20px;
+}
+
+}
